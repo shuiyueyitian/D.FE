@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-Grid</title>
+    <style>
+        html,body {margin: 0; padding: 0;}
+        .wrapper {
+            display: grid;
+            /*grid-template-columns: 2fr 1fr 1fr;*/
+            grid-template-columns: 3fr 1fr 1fr;
+            grid-column-gap: 1px;
+            grid-row-gap: 1px;
+            background-color: #000;
+
+            grid-template-rows: 1fr 3fr;
+
+            /*@media screen and (min-width: 500px) {
+                grid-template-columns: 1fr 1fr 1fr;
+            };
+            @media screen and (min-width: 800px) {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }*/
+        }
+        .letter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-size: 70px;
+            color: #fff;
+            line-height: 1;
+            font-family: 'hobeaux-rococeaux-background', Helvetica;
+            font-weight: 200;
+            background-color: #f2c8c8;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="letter">A</div>
+        <div class="letter">B</div>
+        <div class="letter">C</div>
+        <div class="letter">D</div>
+    </div>
+
+    <p>CSS Grid布局是Web的第一个真正的布局系统。它的的目的是将内容组织成行列的形式，最终使开发人员能高度控制我们眼前屏幕上页面的显示效果。</p>
+    <a href="https://css-tricks.com/getting-started-css-grid/">原文</a>
+    <a href="https://zhuanlan.zhihu.com/p/26757425">译文</a>
+</body>
+</html>
