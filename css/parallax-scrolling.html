@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Parallax Scrolling视差滚动</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.word, .img {
+			width: 100%;
+			height: 350px;
+			line-height: 350px;
+			font-size: 100px;
+			font-weight: bold;
+			text-shadow: 5px 5px 5px rgba(255,232,54,.94);
+			color: #00ff45;
+			text-align: center;
+		}
+		.img {
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.img1 {
+			background-image: url('https://image1.ljcdn.com/xf-resblock/4bda473f-0a84-47b3-895f-9c31ea3a4c9d.jpg.510x300.jpg');
+		}
+		.img2 {
+			background-image: url('https://image1.ljcdn.com/xf-resblock/10f487c9-09e1-46e7-ac3c-77e21dc20f9e.jpg.510x300.jpg');
+		}
+		.img3 {
+			background-image: url('https://image1.ljcdn.com/xf-resblock/9fa05f6d-87ca-4954-ad31-1ba147b95c27.jpg.510x300.jpg');
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="word">part1</div>
+		<div class="img img1">image1</div>
+		<div class="word">part2</div>
+		<div class="img img2">image2</div>
+		<div class="word">part3</div>
+		<div class="img img3">image3</div>
+		<div class="word">part4</div>
+	</div>
+</body>
+</html>
