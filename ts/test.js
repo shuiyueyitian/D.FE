@@ -1,3 +1,4 @@
+"use strict";
 function greet(msg) {
     console.log("Say" + msg);
 }
