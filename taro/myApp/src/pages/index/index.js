@@ -1,11 +1,12 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import BaseNav from '../../components/baseNav.js'
 
 export default class Index extends Component {
 
   config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '首页6'
   }
 
   componentWillMount () { }
@@ -20,8 +21,11 @@ export default class Index extends Component {
 
   render () {
     return (
-      <View className='index'>
-        <Text>这里是一个Taro的demo首页</Text>
+      <View>
+        <BaseNav></BaseNav>
+        <View className='index'>
+          <Text>中国工商银行</Text>
+        </View>
       </View>
     )
   }
