@@ -21,7 +21,7 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+        <Text>这里是一个Taro的demo首页</Text>
       </View>
     )
   }
