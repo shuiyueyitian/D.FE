@@ -1,22 +1,32 @@
-import {Component} from '@tarojs/taro'
+import Taro, {Component} from '@tarojs/taro'
 import {View} from '@tarojs/components'
-import {connect} from '@tarojs/redux'
+// import {connect} from '@tarojs/redux'
 
 import './nav.scss'
 
-@connect(({user}) => ({
-  statusBarHeight: user.systemInfo.statusBarHeight,
-}))
+// @connect(({user}) => ({
+//   statusBarHeight: user.systemInfo.statusBarHeight,
+// }))
 
 class BaseNav extends Component {
   static defaultProps = {
-    color: 'white',
-    backgroundColor: '#2f3333',
+    color: '#333',
+    backgroundColor: '#f5f5f5',
   }
+
+  componentWillMount() {
+    Taro.getSystemInfo({
+      success: res => {
+        global.barHeight = res.statusBarHeight;
+        console.log(res.statusBarHeight, global, 8899)
+      }
+    })
+  }
+
   render() {
-    const {statusBarHeight, backgroundColor, color} = this.props
+    const {backgroundColor, color} = this.props
     const barStyle = {
-      paddingTop: `${statusBarHeight}px`,
+      paddingTop: `${global.barHeight}px`,
       backgroundColor,
       color,
     }
@@ -28,3 +38,5 @@ class BaseNav extends Component {
     )
   }
 }
+
+export default BaseNav
