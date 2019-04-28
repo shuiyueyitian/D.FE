@@ -1,17 +1,17 @@
 import Taro, {Component} from '@tarojs/taro'
-import {View} from '@tarojs/components'
-// import {connect} from '@tarojs/redux'
+import {View, Text} from '@tarojs/components'
 
-import './nav.scss'
-
-// @connect(({user}) => ({
-//   statusBarHeight: user.systemInfo.statusBarHeight,
-// }))
+import './BaseNav.scss'
 
 class BaseNav extends Component {
+
   static defaultProps = {
-    color: '#333',
-    backgroundColor: '#f5f5f5',
+    top: {
+      title: '标题',
+      bgColor: '#f5f5f5',
+      color: '#000',
+      showBack: true
+    }
   }
 
   componentWillMount() {
@@ -23,16 +23,23 @@ class BaseNav extends Component {
     })
   }
 
+  goBack() {
+    Taro.navigateBack();
+  }
+
   render() {
-    const {backgroundColor, color} = this.props
+    const {title, bgColor, color, showBack} = this.props.top ? this.props.top : this.state.top;
     const barStyle = {
       paddingTop: `${global.barHeight}px`,
-      backgroundColor,
-      color,
+      backgroundColor: bgColor,
+      color
     }
     return (
       <View className="navigation">
-        <View className="bar" style={barStyle}>{this.props.children}</View>
+        <View className="bar" style={barStyle}>
+          {showBack ? <View className="back" onClick={this.goBack}>返回</View> : ''}
+          <Text className="title">{title}</Text>
+        </View>
         <View className="placeholder" style={barStyle}></View>
       </View>
     )

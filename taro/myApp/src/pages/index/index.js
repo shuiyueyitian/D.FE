@@ -1,18 +1,18 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Button } from '@tarojs/components'
 import BaseNav from '../../components/baseNav'
 
 import './index.scss'
 
-export default class Index extends Component {
-
-  config = {
-    navigationBarTitleText: '首页',
-    // navigationBarTextStyle: 'white',
-  }
+class Index extends Component {
 
   state = {
-    title: '测试一下'
+    top: {
+      title: '首页title',
+      bgColor: '#ff4949',
+      color: '#fff',
+      showBack: false
+    }
   }
 
   componentWillMount () { }
@@ -25,20 +25,24 @@ export default class Index extends Component {
 
   componentDidHide () { }
 
+  goList() {
+    Taro.navigateTo({
+      url: '/pages/list/index'
+    })
+  }
+
   render () {
+    let {top} = this.state;
     return (
       <View>
-        <BaseNav>
-          <View>
-            <View className='tools'>
-              <View className='title'>{title}</View>
-            </View>
-          </View>
-        </BaseNav>
+        <BaseNav top={top} />
         <View className='index'>
-          <Text>中国工商</Text>
+          <Text>这里正文部分</Text>
+          <Button onClick={this.goList}>去列表页</Button>
         </View>
       </View>
     )
   }
 }
+
+export default Index;

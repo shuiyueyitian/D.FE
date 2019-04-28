@@ -23,6 +23,14 @@ $navigation-box-shadow: 0 2PX 2PX #222;
   height: $navigation-height;
   z-index: 1;
   font-size: $navigation-font-size;
+  .back {
+    position: absolute;
+    left: 22PX;
+  }
+  .title {
+    font-size: 18PX;
+    font-weight: 500;
+  }
 }
  
 .placeholder {
